@@ -1,7 +1,7 @@
 {
   "vault": {
-    "name": "SIE-Flashcard-Set-2026",
-    "path": "/home/user/SIE-Flashcard-Set-2026",
+    "name": "vault",
+    "path": "..",
     "description": "Multi-agent collaborative learning vault"
   },
   "agents": [

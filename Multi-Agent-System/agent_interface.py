@@ -14,7 +14,7 @@ import hashlib
 class AgentVaultInterface:
     """Interface for agents to interact with the Obsidian vault"""
 
-    def __init__(self, agent_id: str, vault_root: str = "/home/user/SIE-Flashcard-Set-2026"):
+    def __init__(self, agent_id: str, vault_root: str = str(Path(__file__).resolve().parent.parent)):
         self.agent_id = agent_id
         self.vault_root = Path(vault_root)
         self.agent_workspace = self.vault_root / "Multi-Agent-System" / f"agent-workspace-{agent_id}"

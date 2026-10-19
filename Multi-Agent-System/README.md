@@ -6,7 +6,7 @@ A distributed multi-agent system for collaborative learning within your Obsidian
 
 ```
 ┌─────────────────────────────────────────────────────┐
-│         Obsidian Vault (SIE-Flashcard-Set)         │
+│         Obsidian Vault                   │
 ├─────────────────────────────────────────────────────┤
 │                                                     │
 │  ┌──────────────┐  ┌──────────────┐  ┌──────────┐ │

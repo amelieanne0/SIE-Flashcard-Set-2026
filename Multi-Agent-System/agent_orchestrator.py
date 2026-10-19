@@ -40,9 +40,9 @@ class Task:
 
 
 class AgentOrchestrator:
-    def __init__(self, config_path: str = "Multi-Agent-System/agents.config.json"):
+    def __init__(self, config_path: str = str(Path(__file__).resolve().parent / "agents.config.json")):
         self.config_path = Path(config_path)
-        self.vault_root = Path("/home/user/SIE-Flashcard-Set-2026")
+        self.vault_root = Path(__file__).resolve().parent.parent
         self.queue_path = self.vault_root / "Multi-Agent-System" / "message-queue"
         self.tasks_path = self.vault_root / "Multi-Agent-System" / "tasks"
 

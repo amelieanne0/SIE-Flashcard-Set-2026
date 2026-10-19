@@ -6,7 +6,7 @@ Get started with the multi-agent system in 5 minutes.
 
 - Python 3.8+
 - Anthropic API key (set as `ANTHROPIC_API_KEY` environment variable)
-- Existing Obsidian vault (SIE-Flashcard-Set-2026)
+- Existing Obsidian vault
 
 ## 1. Set Up Environment
 
@@ -15,7 +15,7 @@ Get started with the multi-agent system in 5 minutes.
 export ANTHROPIC_API_KEY="sk-ant-..."
 
 # Navigate to vault
-cd /home/user/SIE-Flashcard-Set-2026
+cd <path-to-vault>
 
 # Verify structure
 ls -la Multi-Agent-System/
@@ -60,7 +60,7 @@ print(f"Task submitted: {task_id}")
 
 Run it:
 ```bash
-cd /home/user/SIE-Flashcard-Set-2026
+cd <path-to-vault>
 python3 submit_task.py
 ```
 
@@ -220,7 +220,7 @@ print(f"  Review: {orchestrator.get_task_status(task3)['status']}")
 
 Run the workflow:
 ```bash
-cd /home/user/SIE-Flashcard-Set-2026
+cd <path-to-vault>
 python3 workflow.py
 ```
 
@@ -281,7 +281,7 @@ find Multi-Agent-System/ -type d | head -20
 ### Import Errors
 ```bash
 # Add to Python path
-export PYTHONPATH="/home/user/SIE-Flashcard-Set-2026:$PYTHONPATH"
+export PYTHONPATH="<path-to-vault>/Multi-Agent-System:$PYTHONPATH"
 ```
 
 ### Permission Denied

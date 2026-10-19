@@ -1,0 +1,94 @@
+{
+  "vault": {
+    "name": "SIE-Flashcard-Set-2026",
+    "path": "/home/user/SIE-Flashcard-Set-2026",
+    "description": "Multi-agent collaborative learning vault"
+  },
+  "agents": [
+    {
+      "id": "claude-research",
+      "name": "Claude Research Agent",
+      "model": "claude-opus-5-5",
+      "role": "Research & Content Creation",
+      "description": "Researches topics, creates comprehensive notes, and generates study materials",
+      "permissions": {
+        "read": ["Core-Ops", "Command-Center"],
+        "write": ["Core-Ops/research-agent"],
+        "execute": false
+      },
+      "capabilities": [
+        "web-search",
+        "content-generation",
+        "note-synthesis",
+        "flashcard-creation"
+      ]
+    },
+    {
+      "id": "claude-synthesis",
+      "name": "Claude Synthesis Agent",
+      "model": "claude-sonnet-5-5",
+      "role": "Knowledge Synthesis",
+      "description": "Synthesizes information across documents, identifies patterns, and creates summaries",
+      "permissions": {
+        "read": ["Core-Ops", "Command-Center"],
+        "write": ["Core-Ops/synthesis-agent"],
+        "execute": false
+      },
+      "capabilities": [
+        "cross-document-analysis",
+        "pattern-recognition",
+        "summary-generation",
+        "relationship-mapping"
+      ]
+    },
+    {
+      "id": "claude-review",
+      "name": "Claude Review Agent",
+      "model": "claude-haiku-4-5-20251001",
+      "role": "Quality Assurance & Review",
+      "description": "Reviews content for accuracy, clarity, and consistency",
+      "permissions": {
+        "read": ["Core-Ops", "Command-Center"],
+        "write": ["Core-Ops/review-agent"],
+        "execute": false
+      },
+      "capabilities": [
+        "content-review",
+        "error-detection",
+        "consistency-checking",
+        "feedback-generation"
+      ]
+    }
+  ],
+  "coordinators": [
+    {
+      "id": "task-orchestrator",
+      "name": "Task Orchestrator",
+      "type": "central",
+      "role": "Coordinates agent activities and manages task flow",
+      "manages": ["claude-research", "claude-synthesis", "claude-review"],
+      "config": {
+        "max_parallel_tasks": 3,
+        "task_timeout": 3600,
+        "queue_type": "priority"
+      }
+    }
+  ],
+  "communication": {
+    "type": "message-queue",
+    "format": "json",
+    "storage_path": "Multi-Agent-System/message-queue",
+    "retention_days": 30
+  },
+  "integrations": {
+    "apis": [
+      {
+        "name": "anthropic-claude",
+        "type": "llm",
+        "endpoint": "https://api.anthropic.com/v1",
+        "auth": "api-key",
+        "models": ["claude-opus-5-5", "claude-sonnet-5-5", "claude-haiku-4-5-20251001"]
+      }
+    ]
+  }
+}

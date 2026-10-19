@@ -1,0 +1,14 @@
+{
+  "id": "task_20261019_164715_764758",
+  "type": "research",
+  "agent_id": "claude-research",
+  "description": "Test research task",
+  "input_data": {
+    "topic": "Options"
+  },
+  "status": "pending",
+  "created_at": "2026-10-19T16:47:15.765298",
+  "completed_at": null,
+  "result": null,
+  "error": null
+}
